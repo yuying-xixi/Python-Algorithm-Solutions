@@ -16,7 +16,7 @@
 
 设 i , j ,表示前两位和后两位, 通过穷举的方法，打印输出所有可能的值
 """
-
+"""
 if __name__ == "__main__":
     for i in range(1, 10):
         for j in range(10):
@@ -25,3 +25,20 @@ if __name__ == "__main__":
                 for temp in range(31, 100):
                     if temp * temp == k:
                         print(k)
+"""
+# 找到符合的数字退出
+if __name__ == "__main__":
+    flog = 0
+    for i in range(1, 10):
+        if flog:
+            break
+        for j in range(10):
+            if flog:
+                break
+            if i != j:
+                k = i * 1000 + i * 100 + j * 10 + j
+                for temp in range(31, 100):
+                    if temp * temp == k:
+                        print(k)
+                        flog = 1
+
